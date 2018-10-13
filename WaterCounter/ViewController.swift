@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var counterView: CounterView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +21,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func changeWater(_ sender: ActionButton) {
+        if sender.isAddButton {
+            if counterView.counter < 8 {
+                counterView.counter += 1
+            }
+        } else {
+            if counterView.counter > 1 {
+                counterView.counter -= 1
+            }
+        }
+    }
+    
 }
 
